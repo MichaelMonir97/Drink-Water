@@ -5,6 +5,9 @@ const precentage = document.querySelector(".precentage");
 const overlay = document.querySelector(".overlay");
 const text = document.querySelector(".text");
 
+for (let i = 0; i < localStorage.getItem("index"); i++) {
+  smallCups[i].classList.add("full");
+}
 const quotes = [
   "Select how many glasses have you drank.",
   "Hydration is the key to a healthier you.",
@@ -70,6 +73,8 @@ function updateBigCup() {
     : (remained.innerHTML = "Remained");
 
   precent == 0 ? (precentage.innerHTML = "") : null;
+
+  localStorage.setItem("index", document.querySelectorAll(".full").length);
 }
 
 function celebrating() {
